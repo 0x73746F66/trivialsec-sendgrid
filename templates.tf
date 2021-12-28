@@ -9,12 +9,18 @@ data "local_file" "templates" {
   filename    = "./templates/${each.key}/template.html"
 }
 
-resource "sendgrid_template_version" "account_recovery" {
+data "local_file" "json" {
+  for_each    = local.templates
+  filename    = "./templates/${each.key}/template.html.json"
+}
+
+resource "sendgrid_template_version" "versions" {
   for_each               = local.templates
   name                   = each.value
   template_id            = sendgrid_template.templates[each.key].id
   active                 = 1
   html_content           = data.local_file.templates[each.key].content
+  test_data              = data.local_file.json[each.key].content
   generate_plain_content = true
   subject                = "Trivial Security - ${each.value}"
 }
