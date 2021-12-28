@@ -1,0 +1,7 @@
+{
+    "org": "ACME Corp.",
+    "old_email": "chris@langton.cloud",
+    "new_email": "chris@trivialsec.com",
+    "accept_url": "https://app.trivialsec.com/invitation-request/approve/abc123abc123abc123abc123abc123abc123abc123abc123abc123",
+    "deny_url": "https://app.trivialsec.com/invitation-request/deny/abc123abc123abc123abc123abc123abc123abc123abc123abc123"
+}
