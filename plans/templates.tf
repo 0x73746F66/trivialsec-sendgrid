@@ -6,12 +6,12 @@ resource "sendgrid_template" "templates" {
 
 data "local_file" "templates" {
   for_each    = local.templates
-  filename    = "./templates/${each.key}/template.html"
+  filename    = "../templates/${each.key}/template.html"
 }
 
 data "local_file" "json" {
   for_each    = local.templates
-  filename    = "./templates/${each.key}/template.html.json"
+  filename    = "../templates/${each.key}/template.html.json"
 }
 
 resource "sendgrid_template_version" "versions" {

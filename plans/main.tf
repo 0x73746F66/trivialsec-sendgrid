@@ -22,7 +22,7 @@ terraform {
         }
         sendgrid = {
             source = "trois-six/sendgrid"
-            version = ">= 0.1.6"
+            version = ">= 0.2.1"
         }
     }
     backend "s3" {

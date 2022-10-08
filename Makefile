@@ -13,33 +13,33 @@ ifndef CI_BUILD_REF
 endif
 
 init: ## Runs tf init tf
-	terraform init -reconfigure -upgrade=true
+	terraform -chdir=plans init -reconfigure -upgrade=true
 
 output: ## show outputs
-	terraform output -json template_ids | jq -r
+	terraform -chdir=plans output -json template_ids | jq -r
 
 deploy: plan apply ## tf plan and apply -auto-approve -refresh=true
 
 plan: init ## Runs tf validate and tf plan
-	terraform validate
-	terraform plan -no-color -out=.tfplan
-	terraform show --json .tfplan | jq -r '([.resource_changes[]?.change.actions?]|flatten)|{"create":(map(select(.=="create"))|length),"update":(map(select(.=="update"))|length),"delete":(map(select(.=="delete"))|length)}' > tfplan.json
+	terraform -chdir=plans validate
+	terraform -chdir=plans plan -no-color -out=.tfplan
+	terraform -chdir=plans show --json .tfplan | jq -r '([.resource_changes[]?.change.actions?]|flatten)|{"create":(map(select(.=="create"))|length),"update":(map(select(.=="update"))|length),"delete":(map(select(.=="delete"))|length)}' > tfplan.json
 
 apply: ## tf apply -auto-approve -refresh=true
-	terraform apply -auto-approve -refresh=true .tfplan
+	terraform -chdir=plans apply -auto-approve -refresh=true .tfplan
 
 validate: init ## tf validate
-	terraform validate
+	terraform -chdir=plans validate
 
 destroy: init ## tf destroy -auto-approve
-	terraform validate
-	terraform plan -destroy -no-color -out=.tfdestroy
-	terraform show --json .tfdestroy | jq -r '([.resource_changes[]?.change.actions?]|flatten)|{"create":(map(select(.=="create"))|length),"update":(map(select(.=="update"))|length),"delete":(map(select(.=="delete"))|length)}' > tfdestroy.json
-	terraform apply -auto-approve -destroy .tfdestroy
+	terraform -chdir=plans validate
+	terraform -chdir=plans plan -destroy -no-color -out=.tfdestroy
+	terraform -chdir=plans show --json .tfdestroy | jq -r '([.resource_changes[]?.change.actions?]|flatten)|{"create":(map(select(.=="create"))|length),"update":(map(select(.=="update"))|length),"delete":(map(select(.=="delete"))|length)}' > tfdestroy.json
+	terraform -chdir=plans apply -auto-approve -destroy .tfdestroy
 
 tfinstall:
 	curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 	sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(shell lsb_release -cs) main"
 	sudo apt-get update
 	sudo apt-get install -y terraform
-	terraform -install-autocomplete || true
+	terraform -chdir=plans -install-autocomplete || true
