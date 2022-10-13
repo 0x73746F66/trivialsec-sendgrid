@@ -147,7 +147,7 @@
                                     valign="top">
                                     <img class="max-width"
                                         style="display: block; color: #000000; text-decoration: none; font-family: Helvetica, arial, sans-serif; font-size: 16px;"
-                                        src="https://scanner.trivialsec.com/favicon.png" alt="" width="64"
+                                        src="https://www.trivialsec.com/assets/logo.svg" alt="" width="64"
                                         height="64" border="0" data-responsive="false"
                                         data-proportionally-constrained="false" />
                                 </td>
@@ -167,10 +167,18 @@
                                 </td>
                             </tr>
                             <tr>
+                            {{#if requester_email}}
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; text-align: inherit;"
                                     valign="top" bgcolor="#ffffff" height="100%">
                                     <div style="font-family: inherit; text-align: inherit;">
-                                        Please use the provided link or click on the "Confirm" button below to complete the email verification process for {{email}}.
+                                        Member with email <span style="color: #1abb9c;">{{requester_email}}</span> has changed the account billing email from <span style="color: #1abb9c;">{{old_email}}</span>.
+                                    </div>
+                                </td>
+                            {{/if}}
+                                <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; text-align: inherit;"
+                                    valign="top" bgcolor="#ffffff" height="100%">
+                                    <div style="font-family: inherit; text-align: inherit;">
+                                        Please use the provided link or click on the "Confirm" button below to complete the email verification process for <span style="color: #1abb9c;">{{email}}</span>.
                                     </div>
                                 </td>
                             </tr>

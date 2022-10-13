@@ -10,5 +10,6 @@ locals {
         subscriptions           = "Subscription"
         updated_email           = "Updated Email"
         invitations             = "Member Invitation"
+        support                 = "Support Request"
     }
 }
