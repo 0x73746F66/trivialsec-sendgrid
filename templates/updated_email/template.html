@@ -167,62 +167,17 @@
                                 </td>
                             </tr>
                             <tr>
-                            {{#if requester_email}}
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; text-align: inherit;"
                                     valign="top" bgcolor="#ffffff" height="100%">
                                     <div style="font-family: inherit; text-align: inherit;">
-                                        Member with email <span style="color: #1abb9c;">{{requester_email}}</span> has changed the account billing email from <span style="color: #1abb9c;">{{old_email}}</span>.
+                                        Member with email <span style="color: #1abb9c;">{{modifying_email}}</span> has changed the {{email_type_message}} from <span style="color: #1abb9c;">{{old_email}}</span> to <span style="color: #1abb9c;">{{new_email}}</span>.
                                     </div>
-                                </td>
-                            {{/if}}
-                                <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; text-align: inherit;"
-                                    valign="top" bgcolor="#ffffff" height="100%">
-                                    <div style="font-family: inherit; text-align: inherit;">
-                                        Please use the provided link or click on the "Confirm" button below to complete the email verification process for <span style="color: #1abb9c;">{{email}}</span>.
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="line-height: 20px; text-align: inherit;" valign="top" bgcolor="#ffffff"
-                                    height="100%">
-                                    <div>
-                                        <div
-                                            style="text-align: center; padding: 10px 5px; background-color: #333; font-family: inherit;">
-                                            <span
-                                                style="font-family: 'trebuchet ms', helvetica, sans-serif; font-size: 12px; color: #1abb9c;">
-                                                {{activation_url}}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="outer-td" style="padding: 20px 0; background-color: #ffffff;" align="center"
-                                    bgcolor="#ffffff">
-                                    <table class="button-css__deep-table___2OZyb wrapper-mobile"
-                                        style="text-align: center;" border="0" cellspacing="0" cellpadding="0">
-                                        <tbody>
-                                            <tr>
-                                                <td class="inner-td"
-                                                    style="border-radius: 6px; font-size: 16px; text-align: center; background-color: inherit;"
-                                                    align="center" bgcolor="#1abb9c">
-                                                    <a style="background-color: #1abb9c; border: 0px solid #333333; border-radius: 0px; color: #ffffff; display: inline-block; font-family: trebuchet ms,helvetica,sans-serif; font-size: 16px; font-weight: normal; letter-spacing: 1px; line-height: 30px; padding: 12px 20px 12px 20px; text-align: center; text-decoration: none;"
-                                                        href="{{activation_url}}">
-                                                        Confirm
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; text-align: inherit;"
                                     valign="top" bgcolor="#ffffff" height="100%">
                                     <div style="font-family: inherit; text-align: inherit;">
-                                        If you didn't attempt to verify your email address, simply delete or ignore this email.
-                                        <br />
-                                        <br />
                                         Cheers,
                                         </span>
                                         <br />

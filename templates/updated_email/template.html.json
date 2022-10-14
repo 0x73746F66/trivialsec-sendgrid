@@ -1,4 +1,6 @@
 {
-    "email":"chris@langton.cloud",
-    "activation_url": "https://app.trivialsec.com/invitation/abc123abc123abc123abc123abc123abc123abc123"
+    "old_email": "chris@langton.cloud",
+    "new_email":"accounts@langton.cloud",
+    "modifying_email": "chrislangton84@gmail.com",
+    "email_type_message": "account billing email address"
 }
