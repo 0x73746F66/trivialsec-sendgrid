@@ -1,5 +1,6 @@
 {
     "email": "chris@trivialsec.com",
-    "activation_url": "https://app.trivialsec.com/confirmation/abc123abc123abc123abc123abc123abc123abc123abc123abc123",
+    "invited_by": "peta@trivialsec.com",
+    "activation_url": "https://www.trivialsec.com/login/abc123abc123abc123abc123abc123abc123abc123abc123abc123",
     "invitation_message": "some org owner user text"
 }

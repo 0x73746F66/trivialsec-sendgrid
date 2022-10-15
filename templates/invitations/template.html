@@ -166,16 +166,28 @@
                                     </div>
                                 </td>
                             </tr>
-                            {{#if invitation_message}}
                             <tr>
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; text-align: inherit;"
                                     valign="top" bgcolor="#ffffff" height="100%">
                                     <div style="font-family: inherit; text-align: inherit;">
+                                        You have been invited to join Trivial Security by a member with email of {{invited_by}}.
+                                    </div>
+                                    {{#if invitation_message}}
+                                    <div style="font-family: inherit; text-align: inherit;">
                                         {{invitation_message}}
+                                    </div>
+                                    {{/if}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; text-align: inherit;"
+                                    valign="top" bgcolor="#ffffff" height="100%">
+                                    <div style="font-family: inherit; text-align: inherit;">
+                                        Trivial Security is a FREE service to help you identify the basic threats attackers use against you, raising the
+                                        Cybersecurity poverty line.
                                     </div>
                                 </td>
                             </tr>
-                            {{/if}}
                             <tr>
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; text-align: inherit;"
                                     valign="top" bgcolor="#ffffff" height="100%">
@@ -222,15 +234,7 @@
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; text-align: inherit;"
                                     valign="top" bgcolor="#ffffff" height="100%">
                                     <div style="font-family: inherit; text-align: inherit;">
-                                        If you didn't attempt to verify your email address with our service, delete this email.
-                                        <br />
-                                        <br />
-                                        Trivial Security monitors public threats and easy attack vectors so you don't have to spend your valuable time keeping
-                                        up-to-date daily.
-                                        <br />
-                                        <br />
                                         Cheers,
-                                        </span>
                                         <br />
                                         <span
                                             style="color: #1abb9c; font-family: 'trebuchet ms', helvetica, sans-serif; font-size: 18px;">
