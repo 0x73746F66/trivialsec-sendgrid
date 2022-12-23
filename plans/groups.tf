@@ -18,6 +18,14 @@ resource "sendgrid_unsubscribe_group" "marketing" {
 	name   = "Marketing & Promotions"
 	description = "From time to time our team may let subscribers or existing customers know about exclusive deals"
 }
+resource "sendgrid_unsubscribe_group" "contact_us" {
+	name   = "Contact Us"
+	description = "All messages sent from this list originate from a request you made for us to contact you"
+}
+resource "sendgrid_unsubscribe_group" "internal" {
+	name   = "Internal"
+	description = "Emails sent to internal staff only"
+}
 
 output "group_ids" {
   value = {
@@ -25,5 +33,7 @@ output "group_ids" {
     "notifications" = sendgrid_unsubscribe_group.notifications.id
     "focus_group"   = sendgrid_unsubscribe_group.focus_group.id
     "marketing"     = sendgrid_unsubscribe_group.marketing.id
+    "contact_us"    = sendgrid_unsubscribe_group.contact_us.id
+    "internal"      = sendgrid_unsubscribe_group.internal.id
   }
 }

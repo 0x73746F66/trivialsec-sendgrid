@@ -1,0 +1,10 @@
+{
+    "hostname": "www.trivialsec.com",
+    "port": 443,
+    "results_uri": "/result/BGtHcXamwAsiuEG0Uf7wvXgr2ZHsYI_cBkgT8l9kIgpUYRJAB0sdxBFBLOCUqDLk-3EWt6FrfhQ/detail",
+    "score": 1588,
+    "pass_result":22,
+    "info_result": 11,
+    "warn_result": 33,
+    "fail_result": 1
+}

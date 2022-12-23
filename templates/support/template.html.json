@@ -1,5 +1,5 @@
 {
     "email": "chris@trivialsec.com",
-    "activation_url": "https://app.trivialsec.com/confirmation/abc123abc123abc123abc123abc123abc123abc123abc123abc123",
-    "invitation_message": "some org owner user text"
+    "message": "some org owner user text",
+    "json": "{\n        \"operating_system\": \"Linux\",\n        \"operating_system_release\": \"5.15.60-1-MANJARO\",\n        \"operating_system_version\": \"#1 SMP PREEMPT Thu Aug 11 13:14:05 UTC 2022\",\n        \"architecture\": \"x86_64\"\n     }"
 }
