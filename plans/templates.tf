@@ -22,7 +22,7 @@ resource "sendgrid_template_version" "versions" {
   html_content           = data.local_file.templates[each.key].content
   test_data              = data.local_file.json[each.key].content
   generate_plain_content = true
-  subject                = "Trivial Security - ${each.value}"
+  subject                = "Trivial Security - {{subject}}"
 }
 
 output "template_ids" {
