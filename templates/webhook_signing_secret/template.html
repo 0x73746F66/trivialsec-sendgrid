@@ -108,8 +108,7 @@
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
                                     valign="top" bgcolor="#ffffff" height="100%">
                                     <div>
-                                        This email confirms your subscription for <span
-                                            style="color: #1abb9c">{{email}}</span>.
+                                        This email confirms webhook endpoint registration of <span style="color: #1abb9c">{{endpoint}}</span>.
                                     </div>
                                 </td>
                             </tr>
@@ -117,19 +116,43 @@
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
                                     valign="top" bgcolor="#ffffff" height="100%">
                                     <div>
-                                        If you didn't sign up to get updates, it is likely someone else has provided
-                                        your email because they think you might be interested.
+                                        Keep the following webhook signing secret stored securely.
                                     </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="line-height: 20px;" valign="top" bgcolor="#2b2525" height="100%">
+                                    <div>
+                                        <div style="line-height: 1.5; text-align: center; padding: 10px 5px; font-family: 'courier new', sans-serif; font-size: 10px; color: #1abb9c; background-color: #2b2525;">
+                                            {{signing_secret}}
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="outer-td" style="padding: 20px 0; background-color: #ffffff;" align="center"
+                                    bgcolor="#ffffff">
+                                    <table class="button-css__deep-table___2OZyb wrapper-mobile"
+                                        style="text-align: center;" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                <td class="inner-td"
+                                                    style="border-radius: 6px; font-size: 16px; text-align: center; "
+                                                    align="center" bgcolor="#1abb9c">
+                                                    <a style="background-color: #1abb9c; border: 0px solid #333333; border-radius: 0px; color: #ffffff; display: inline-block; font-size: 16px; line-height: 30px; padding: 12px 20px 12px 20px; text-align: center;"
+                                                        href="https://www.trivialsec.com/account/webhooks">
+                                                        View Configurations
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
                                     valign="top" bgcolor="#ffffff" height="100%">
                                     <div>
-                                        If you do not want any further emails from us please use the SendGrid
-                                        unsubscribe links below.
-                                        <br />
-                                        <br />
                                         Cheers,
                                         </span>
                                         <br />

@@ -11,5 +11,6 @@ locals {
         invitations             = "Member Invitation"
         support                 = "Support Request"
         scan_completed          = "On-demand scanning complete"
+        webhook_signing_secret  = "Webhokk endpoint registration"
     }
 }
