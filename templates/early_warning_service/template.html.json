@@ -1,0 +1,12 @@
+{
+    "description": "IP addresses that has been seen initiating an SSH connection to a remote host. This report lists hosts that are suspicious of more than just port scanning. These hosts may be SSH server cataloging or conducting authentication attack attempts",
+    "summary": "SSH Port Scanning and Bruteforcing Authentication",
+    "abuse": "info@dataplane.org",
+    "asn": "396982",
+    "asn_text": "GOOGLE-CLOUD-PLATFORM",
+    "ip_address": "18.155.145.110",
+    "last_seen": "2023-01-23T01:47:26",
+    "account_name": "trivialsecurity",
+    "reference_url": "https://www.darklist.de/view.php?ip=18.155.145.110",
+    "domains": ["dev.trivialsec.com", "www.trivialsec.com"]
+}

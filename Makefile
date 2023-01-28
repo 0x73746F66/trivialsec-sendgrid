@@ -20,7 +20,7 @@ output: ## show outputs
 
 deploy: plan apply ## tf plan and apply -auto-approve -refresh=true
 
-plan: init ## Runs tf validate and tf plan
+plan: ## Runs tf validate and tf plan
 	terraform -chdir=plans validate
 	terraform -chdir=plans plan -no-color -out=.tfplan
 	terraform -chdir=plans show --json .tfplan | jq -r '([.resource_changes[]?.change.actions?]|flatten)|{"create":(map(select(.=="create"))|length),"update":(map(select(.=="update"))|length),"delete":(map(select(.=="delete"))|length)}' > tfplan.json
@@ -28,10 +28,10 @@ plan: init ## Runs tf validate and tf plan
 apply: ## tf apply -auto-approve -refresh=true
 	terraform -chdir=plans apply -auto-approve -refresh=true .tfplan
 
-validate: init ## tf validate
+validate: ## tf validate
 	terraform -chdir=plans validate
 
-destroy: init ## tf destroy -auto-approve
+destroy: ## tf destroy -auto-approve
 	terraform -chdir=plans validate
 	terraform -chdir=plans plan -destroy -no-color -out=.tfdestroy
 	terraform -chdir=plans show --json .tfdestroy | jq -r '([.resource_changes[]?.change.actions?]|flatten)|{"create":(map(select(.=="create"))|length),"update":(map(select(.=="update"))|length),"delete":(map(select(.=="delete"))|length)}' > tfdestroy.json

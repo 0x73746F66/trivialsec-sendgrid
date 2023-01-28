@@ -12,5 +12,6 @@ locals {
         support                 = "Support Request"
         scan_completed          = "On-demand scanning complete"
         webhook_signing_secret  = "Webhokk endpoint registration"
+        early_warning_service   = "Early Warning Service (EWS) Alert"
     }
 }
