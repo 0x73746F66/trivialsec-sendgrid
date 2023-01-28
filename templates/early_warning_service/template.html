@@ -213,14 +213,15 @@
                                                                             </td>
                                                                         </tr>
                                                                         {{/if}}
+                                                                        {{#if asn}}
                                                                         <tr>
                                                                             <td style="padding:15px 0px 18px 40px; line-height:22px; text-align:inherit; background-color:#2B2525;" height="100%" valign="top" bgcolor="#2B2525" role="module-content">
                                                                                 <div>
-                                                                                    <div style="font-family: inherit; text-align: inherit"><span style="color: #ffffff"><strong>Originating from ASN {{ asn }} ({{ asn_text }})</strong></span></div>
-                                                                                    <div></div>
+                                                                                    <div style="font-family: inherit; text-align: inherit"><span style="color: #ffffff"><strong>Originating from ASN {{ asn }}{{#if asn_text}} ({{ asn_text }}){{/if}}</strong></span></div>
                                                                                 </div>
                                                                             </td>
                                                                         </tr>
+                                                                        {{/if}}
                                                                         {{#if domains}}
                                                                         <tr>
                                                                             <td style="color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; " valign="top" bgcolor="#2B2525" height="100%">
