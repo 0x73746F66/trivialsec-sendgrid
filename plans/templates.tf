@@ -9,9 +9,9 @@ data "local_file" "templates" {
   filename    = "../templates/${each.key}/template.html"
 }
 
-data "local_file" "json" {
+data "local_file" "template_data" {
   for_each    = local.templates
-  filename    = "../templates/${each.key}/template.html.json"
+  filename    = "../templates/${each.key}/template.json"
 }
 
 resource "sendgrid_template_version" "versions" {
@@ -20,7 +20,7 @@ resource "sendgrid_template_version" "versions" {
   template_id            = sendgrid_template.templates[each.key].id
   active                 = 1
   html_content           = data.local_file.templates[each.key].content
-  test_data              = data.local_file.json[each.key].content
+  test_data              = data.local_file.template_data[each.key].content
   generate_plain_content = true
   subject                = "Trivial Security - {{subject}}"
 }
