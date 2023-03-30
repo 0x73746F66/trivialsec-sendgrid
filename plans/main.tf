@@ -21,8 +21,8 @@ terraform {
             version = ">= 3.64.2"
         }
         sendgrid = {
-            source = "trois-six/sendgrid"
-            version = ">= 0.2.1"
+            source = "anna-money/sendgrid"
+            version = ">= 1.0.4"
         }
     }
     backend "s3" {

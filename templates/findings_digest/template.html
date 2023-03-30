@@ -72,21 +72,17 @@
         cellpadding="0" bgcolor="#2b2525" align="center">
         <tbody>
             <tr>
-                <td style="padding: 0px 0px 0px 0px;  text-align: left;" valign="top" bgcolor="#2b2525"
-                    width="100%">
+                <td style="padding: 0px 0px 0px 0px;  text-align: left;" valign="top" bgcolor="#2b2525" width="100%">
                     <table class="module" style="table-layout: fixed;" border="0" width="100%" cellspacing="0"
                         cellpadding="0">
                         <tbody>
                             <tr>
                                 <td style="font-size: 6px; line-height: 10px; padding: 0px 0px 0px 0px;" align="center"
                                     valign="top">
-                                    <a style="display: block; text-decoration: none;" href="https://www.trivialsec.com/">
-                                    <img
-                                        src="https://www.trivialsec.com/icon-512x512.png"
-                                        alt="Trivial Security logo"
-                                        width="128"
-                                        height="auto"
-                                        />
+                                    <a style="display: block; text-decoration: none;"
+                                        href="https://www.trivialsec.com/">
+                                        <img src="http://cdn.mcauto-images-production.sendgrid.net/a5d585b7276616f3/42aa2031-f0c0-4de6-ab1e-e6b76524a328/512x512.png"
+                                            alt="Trivial Security logo" width="128" height="auto" />
                                     </a>
                                 </td>
                             </tr>
@@ -108,7 +104,8 @@
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
                                     valign="top" bgcolor="#ffffff" height="100%">
                                     <div>
-                                        This email digest contains {{ (length findings) }} new findings discovered (or regressed) during the last scan.
+                                        This email digest contains {{ findings.length }} new findings discovered (or
+                                        regressed) during the last scan.
                                     </div>
                                 </td>
                             </tr>
@@ -152,32 +149,53 @@
                                     </table>
                                 </td>
                             </tr>
-                            {{#each findings}}
-                                <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
-                                    valign="top" bgcolor="#ffffff" height="100%">
-                                    {{#if this.is_critical}}<span style="color: #bb251a">{{/if}}
-                                        {{ this.name }}
-                                    {{#if this.is_critical}}</span>{{/if}}
+                            <tr>
+                                <td class="outer-td" style="padding: 20px 0; background-color: #ffffff;" align="center"
+                                    bgcolor="#ffffff">
+                                    <table class="wrapper-mobile" style="text-align: center;" border="0" cellspacing="0"
+                                        cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                <th style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
+                                                    valign="top" bgcolor="#ffffff" height="100%">
+                                                    Finding
+                                                </th>
+                                                <th style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
+                                                    valign="top" bgcolor="#ffffff" height="100%">
+                                                    Status
+                                                </th>
+                                                <th style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
+                                                    valign="top" bgcolor="#ffffff" height="100%">
+                                                    Hostname
+                                                </th>
+                                            </tr>
+                                            {{#each findings}}
+                                            <tr>
+                                                <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
+                                                    valign="top" bgcolor="#ffffff" height="100%">
+                                                    {{#if this.is_critical}}<span style="color: #bb251a">{{/if}}
+                                                        {{ this.name }}
+                                                    {{#if this.is_critical}}</span>{{/if}}
+                                                </td>
+                                                <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
+                                                    valign="top" bgcolor="#ffffff" height="100%">
+                                                    {{ this.result_label }} - {{ this.status }}
+                                                </td>
+                                                <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
+                                                    valign="top" bgcolor="#ffffff" height="100%">
+                                                    {{ this.hostname }}:{{ this.port }}
+                                                </td>
+                                            </tr>
+                                            {{/each}}
+                                        </tbody>
+                                    </table>
                                 </td>
-                                <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
-                                    valign="top" bgcolor="#ffffff" height="100%">
-                                        {{ this.result_label }}
-                                </td>
-                                <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
-                                    valign="top" bgcolor="#ffffff" height="100%">
-                                        {{ this.hostname }}:{{ this.port }}
-                                </td>
-                                <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
-                                    valign="top" bgcolor="#ffffff" height="100%">
-                                        {{ this.status }}
-                                </td>
-                            {{/each}}
+                            </tr>
                             <tr>
                                 <td style="background-color: #ffffff; padding: 10px 40px 20px 40px; line-height: 22px; "
                                     valign="top" bgcolor="#ffffff" height="100%">
                                     <div>
                                         Cheers,
-                                        </span>
                                         <br />
                                         <span
                                             style="color: #1abb9c; font-family: 'trebuchet ms', helvetica, sans-serif; font-size: 18px;">
@@ -220,20 +238,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="module unsubscribe-css__unsubscribe___2CDlR"
-                        style="font-size: 12px; line-height: 20px; padding: 16px 16px 16px 16px; text-align: center;"
-                        data-role="module-unsubscribe" data-type="unsubscribe" data-muid="mQ1u1Awkou7szvSGChCGcV">
-                        <p style="font-family: arial,helvetica,sans-serif; font-size: 12px; line-height: 20px;">
-                            <a class="Unsubscribe--unsubscribeLink" href="{{{unsubscribe}}}">
-                                Unsubscribe
-                            </a>
-                            -
-                            <a class="Unsubscribe--unsubscribePreferences" href="{{{unsubscribe_preferences}}}"
-                                target="_blank">
-                                Unsubscribe Preferences
-                            </a>
-                        </p>
-                    </div>
                 </td>
             </tr>
         </tbody>
