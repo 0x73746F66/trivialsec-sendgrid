@@ -14,5 +14,6 @@ locals {
         webhook_signing_secret  = "Webhokk endpoint registration"
         findings_digest         = "Findings Digest"
         early_warning_service   = "Early Warning Service (EWS) Alert"
+        login_location          = "Login from a new location"
     }
 }
